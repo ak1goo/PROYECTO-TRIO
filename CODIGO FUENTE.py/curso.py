@@ -13,7 +13,7 @@ class CourseNotFoundError(CourseError):
 class curso :
     def __init__(self, codigo,nombre, instructor):
       self.codigo=codigo
-      self.nombre = nombre
+      self.nombre=nombre
       self.instructor=instructor
       self.estudiantes={}
       self.evaluaciones={}
@@ -35,7 +35,8 @@ class curso :
 
     def evaluaciones_agregar(self, evaluaciones_listado):
        for eva in evaluaciones_listado:
-          self.evaluaciones_agregar(eva) 
+          self.evaluacion_agregado(eva)
+
 
     def mostrarestudiantes(self):
        if not self.estudiantes:
@@ -50,15 +51,21 @@ class curso :
     def informacion(self):
        infor= f"curso: {self.nombre} ({self.codigo})\n instrutor es: {self.instructor}\n"
        infor+= "\n Estudiantes inscritos:\n" 
-       estudiantes= self.mostrarestudiantes()
-       for estu in estudiantes if isinstance(estudiantes, list) else [estudiantes]:
-          infor += f" - {estu}\n"
+       
+       estudiantes=self.mostrarestudiantes()
+       if isinstance(estudiantes, list):
+          for estu in estudiantes:
+            infor += f" - {estu}\n"
+
+
        infor += "\nEvaluaciones: \n"
        evaluaciones= self.mostrarevaluaciones()
-       for eva in evaluaciones if isinstance(evaluaciones, list) else [evaluaciones]:
-          infor+= f" - {eva}\n"
-       return infor
+       if isinstance(evaluaciones, list):
+          for eva in evaluaciones:
+             infor+= f" - {eva}\n"
+       else:
+          infor+= f" - {evaluaciones}\n"
     
-def _repr_(self):
+def __repr__(self):
    return f"curso({self.codigo}, {self.nombre}, Instructor={self.instructor})"
     
