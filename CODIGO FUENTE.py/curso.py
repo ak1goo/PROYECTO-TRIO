@@ -45,5 +45,20 @@ class curso :
     def mostrarevaluaciones(self):
        if not self.evaluaciones:
           return "no se encuentra evaluaciones asigandas por el momento"
-       return [f"{eva.tipo()}(eva.codigo), {eva.titulo})" for eva in self.evaluaciones.values()]
-                     
+       return [f"{eva.tipo()}({eva.codigo}), {eva.titulo})" for eva in self.evaluaciones.values()]
+
+    def informacion(self):
+       infor= f"curso: {self.nombre} ({self.codigo})\n instrutor es: {self.instructor}\n"
+       infor+= "\n Estudiantes inscritos:\n" 
+       estudiantes= self.mostrarestudiantes()
+       for estu in estudiantes if isinstance(estudiantes, list) else [estudiantes]:
+          infor += f" - {estu}\n"
+       infor += "\nEvaluaciones: \n"
+       evaluaciones= self.mostrarevaluaciones()
+       for eva in evaluaciones if isinstance(evaluaciones, list) else [evaluaciones]:
+          infor+= f" - {eva}\n"
+       return infor
+    
+def _repr_(self):
+   return f"curso({self.codigo}, {self.nombre}, Instructor={self.instructor})"
+    
