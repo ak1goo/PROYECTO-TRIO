@@ -17,3 +17,4 @@ Clase Instructor hereda Usuario:
     Atributos: especialidad
     Métodos:
         - asignar_curso(curso): curso.instructor = self
+        
