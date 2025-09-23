@@ -52,4 +52,4 @@ if __name__ == "__main__":
     reporte_filtrado = registro.generar_reporte("B202", min_promedio=60)
 
     for estudiante, promedio in reporte_filtrado.items():
-        print(f"{estudiante}: {promedio}")
+        print(f"{estudiante}: {promedio}") 
