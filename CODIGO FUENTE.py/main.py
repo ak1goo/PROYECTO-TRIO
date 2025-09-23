@@ -1,5 +1,4 @@
 from usuario import Estudiante, Instructor
-from curso import __repr__
 from evaluacion import examen, tarea
 from curso import curso, DuplicateEnrollmentError, CourseError
 from reportes import RegistroCalificaciones
