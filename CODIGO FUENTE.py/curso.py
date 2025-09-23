@@ -43,7 +43,7 @@ class curso :
           return "no se encuntra estudiantes inscritos"
        return [f"{id}-{nombre}" for id, nombre in self.estudiantes.items()] 
 
-    def mostrarevaluaciones(self):
+    def mostrar_evaluaciones(self):
        if not self.evaluaciones:
           return "no se encuentra evaluaciones asigandas por el momento"
        return [f"{eva.tipo()}({eva.codigo}), {eva.titulo})" for eva in self.evaluaciones.values()]
