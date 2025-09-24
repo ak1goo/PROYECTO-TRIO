@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     try:
         python.inscribir_estudiante(ana._carnet, ana.get_nombre())
-        python.inscribir_estudiante(rodrigo._carnet, ana.get_nombre())
+        python.inscribir_estudiante(rodrigo._carnet, rodrigo.get_nombre())
 
         python.inscribir_estudiante(ana._carnet, ana.get_nombre())
     except DuplicateEnrollmentError as e:
