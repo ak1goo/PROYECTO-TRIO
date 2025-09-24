@@ -59,13 +59,14 @@ class curso :
 
 
        infor += "\nEvaluaciones: \n"
-       evaluaciones= self.mostrarevaluaciones()
+       evaluaciones= self.mostrar_evaluaciones()
        if isinstance(evaluaciones, list):
           for eva in evaluaciones:
              infor+= f" - {eva}\n"
        else:
           infor+= f" - {evaluaciones}\n"
-    
-def __repr__(self):
-   return f"curso({self.codigo}, {self.nombre}, Instructor={self.instructor})"
+
+       return infor
+    def __repr__(self):
+       return f"curso({self.codigo}, {self.nombre}, Instructor={self.instructor})"
     
